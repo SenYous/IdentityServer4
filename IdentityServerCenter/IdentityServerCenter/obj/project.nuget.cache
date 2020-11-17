@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sP4f2xaZQ1sSOR8/atV/ePErVYuGkcDUKYnFYCSiyCjYJuDOANORXFsLkNPyeedbMjB8Uucg1WwWKdYIHKBDDg==",
+  "dgSpecHash": "dewEMOo//UIhyhGBB1+xvhEgU7UiD7nyJufO0ChD8dV4qlYBH1TZDjUnagqFEEYNkBVM6l2s9BLqYZzsq+9ONw==",
   "success": true,
   "projectFilePath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\IdentityServerCenter.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\NuGetPackages\\microsoft.identitymodel.protocols\\5.6.0\\microsoft.identitymodel.protocols.5.6.0.nupkg.sha512",
     "C:\\NuGetPackages\\microsoft.identitymodel.protocols.openidconnect\\5.6.0\\microsoft.identitymodel.protocols.openidconnect.5.6.0.nupkg.sha512",
     "C:\\NuGetPackages\\microsoft.identitymodel.tokens\\5.6.0\\microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
+    "C:\\NuGetPackages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\NuGetPackages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\NuGetPackages\\system.identitymodel.tokens.jwt\\5.6.0\\system.identitymodel.tokens.jwt.5.6.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",

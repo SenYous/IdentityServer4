@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using IdentityServer4;
 
 namespace IdentityServerCenter
 {
@@ -25,11 +18,20 @@ namespace IdentityServerCenter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //        services.AddIdentityServer()
+            //.AddInMemoryClients(Config.GetClients())
+            //.AddInMemoryIdentityResources(Config.GetIdentityResources())
+            //.AddInMemoryApiResources(Config.GetResources())
+            //.AddTestUsers(Config.Get())
+            //.AddDeveloperSigningCredential();
+
             services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
                 .AddInMemoryApiResources(Config.GetResources())
                 .AddInMemoryClients(Config.GetClients());
 
-            services.AddControllers();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +45,7 @@ namespace IdentityServerCenter
             app.UseIdentityServer();
             //app.UseRouting();
 
-            //app.UseAuthorization();
+            ////app.UseAuthorization();
 
             //app.UseEndpoints(endpoints =>
             //{
