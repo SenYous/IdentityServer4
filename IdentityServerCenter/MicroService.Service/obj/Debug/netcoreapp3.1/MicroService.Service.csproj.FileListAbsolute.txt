@@ -1,0 +1,14 @@
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Service.deps.json
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Service.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Service.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Interface.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Model.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Interface.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\bin\Debug\netcoreapp3.1\MicroService.Model.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.csprojAssemblyReference.cache
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.AssemblyInfoInputs.cache
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.AssemblyInfo.cs
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.csproj.CoreCompileInputs.cache
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.csproj.CopyComplete
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Service\obj\Debug\netcoreapp3.1\MicroService.Service.pdb

@@ -1,6 +1,5 @@
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\bin\Debug\netcoreapp3.1\appsettings.Development.json
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\bin\Debug\netcoreapp3.1\appsettings.json
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\bin\Debug\netcoreapp3.1\IdentityServerCenter.exe
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\IdentityServerCenter.AssemblyInfoInputs.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\IdentityServerCenter.AssemblyInfo.cs
@@ -30,4 +29,5 @@ F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCente
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\IdentityServerCenter.csproj.CoreCompileInputs.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\IdentityServerCenter.MvcApplicationPartsAssemblyInfo.cache
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\scopedcss\bundle\IdentityServerCenter.styles.css
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\IdentityServerCenter\obj\Debug\netcoreapp3.1\IdentityServerCenter.csprojAssemblyReference.cache
