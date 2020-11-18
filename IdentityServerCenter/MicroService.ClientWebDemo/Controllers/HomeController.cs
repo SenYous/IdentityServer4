@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
+using Consul;
 
 namespace MicroService.ClientWebDemo.Controllers
 {
@@ -31,7 +32,44 @@ namespace MicroService.ClientWebDemo.Controllers
         public IActionResult Index()
         {
             //base.ViewBag.Users = this._iUserService.UserAll();
-            string url = "http://localhost:5726/api/users/all";
+            string url = null;
+            #region Nginx
+            //url = "http://localhost:8055/api/users/all";
+            #endregion
+
+            #region consul
+            url = "http://MicroService/api/users/all";//客户端调用服务--Consul就像个DNS
+
+            ConsulClient client = new ConsulClient(c =>
+            {
+                c.Address = new Uri("http://localhost:8500/");
+                c.Datacenter = "dcl";
+            });
+            var response = client.Agent.Services().Result.Response;
+            foreach (var item in response)
+            {
+                Console.WriteLine("********************");
+                Console.WriteLine(item.Key);
+                var service = item.Value;
+                Console.WriteLine($"{service.Address}--{service.Port}--{service.Service}");
+                Console.WriteLine("********************");
+            }
+
+
+            Uri uri = new Uri(url);
+            string groupName = uri.Host;
+            var serviceDictionary = response.Where(s => s.Value.Service.Equals(groupName, StringComparison.OrdinalIgnoreCase)).ToArray();
+
+            AgentService agentService = null;
+
+            agentService = serviceDictionary[0].Value;
+
+
+            url = $"{uri.Scheme}://{agentService.Address}:{agentService.Port}{uri.PathAndQuery}";
+
+
+            #endregion
+
             string content = InvokeApi(url);
 
             base.ViewBag.Users = JsonConvert.DeserializeObject<IEnumerable<User>>(content);

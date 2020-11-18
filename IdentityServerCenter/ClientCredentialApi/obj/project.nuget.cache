@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wU1DtXsiLL2QQODZZi7c9y3JOjH+vAhGrWHLmfmO8yBS9X7/Vdsun67PuIoLk1AEPoqXhmBjwgvImjeQq/ux5Q==",
+  "dgSpecHash": "TnjXwVvryTbOoHg6LbsEKi/lSFDXjjZ+Cqnj6PNVqvUiJmDCXN/iWpzO13LRC6oRaxfzyyYg2t04VGUo/WBIsg==",
   "success": true,
   "projectFilePath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\ClientCredentialApi\\ClientCredentialApi.csproj",
   "expectedPackageFiles": [

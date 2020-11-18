@@ -8,8 +8,10 @@ F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Client
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.ClientDemo.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Interface.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Model.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Service.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Interface.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Model.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Service.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.csprojAssemblyReference.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.AssemblyInfoInputs.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.AssemblyInfo.cs
@@ -23,5 +25,5 @@ F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Client
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\obj\Debug\netcoreapp3.1\MicroService.ClientDemo.genruntimeconfig.cache
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Service.dll
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\MicroService.Service.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\Consul.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientDemo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
