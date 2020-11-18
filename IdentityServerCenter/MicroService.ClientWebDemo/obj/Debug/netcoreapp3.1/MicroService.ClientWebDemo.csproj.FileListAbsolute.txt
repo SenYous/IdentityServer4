@@ -8,10 +8,14 @@ F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Client
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.ClientWebDemo.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.ClientWebDemo.Views.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.ClientWebDemo.Views.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Interface.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Model.dll
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Service.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Interface.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Model.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Service.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.csprojAssemblyReference.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.AssemblyInfoInputs.cache
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.AssemblyInfo.cs
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.csproj.CoreCompileInputs.cache
@@ -38,6 +42,4 @@ F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Client
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.dll
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.pdb
 F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.genruntimeconfig.cache
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\obj\Debug\netcoreapp3.1\MicroService.ClientWebDemo.csprojAssemblyReference.cache
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Service.dll
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\MicroService.Service.pdb
+F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.ClientWebDemo\bin\Debug\netcoreapp3.1\Consul.dll

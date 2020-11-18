@@ -536,7 +536,6 @@
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "http://www.nuget.org/api/v2/": {},
         "https://www.nuget.org/api/v2/": {}
       },

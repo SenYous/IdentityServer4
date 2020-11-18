@@ -1,3 +1,4 @@
+using MicroService.ClientDemo.Utility;
 using MicroService.Interface;
 using MicroService.Service;
 using Microsoft.AspNetCore.Builder;
@@ -49,6 +50,9 @@ namespace MicroService.ClientDemo
             {
                 endpoints.MapControllers();
             });
+
+            //启动时注册，且只注册一次
+            this.Configuration.ConsulRegist();
         }
     }
 }

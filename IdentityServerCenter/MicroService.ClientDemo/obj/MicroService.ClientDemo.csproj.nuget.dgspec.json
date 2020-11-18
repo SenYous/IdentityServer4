@@ -24,7 +24,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://www.nuget.org/api/v2/": {},
           "https://www.nuget.org/api/v2/": {}
         },
@@ -53,6 +52,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Consul": {
+              "target": "Package",
+              "version": "[1.6.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -95,7 +100,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://www.nuget.org/api/v2/": {},
           "https://www.nuget.org/api/v2/": {}
         },
@@ -157,7 +161,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://www.nuget.org/api/v2/": {},
           "https://www.nuget.org/api/v2/": {}
         },
@@ -215,7 +218,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://www.nuget.org/api/v2/": {},
           "https://www.nuget.org/api/v2/": {}
         },

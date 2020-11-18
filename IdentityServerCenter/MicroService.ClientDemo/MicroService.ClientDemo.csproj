@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Consul" Version="1.6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MicroService.Interface\MicroService.Interface.csproj" />
     <ProjectReference Include="..\MicroService.Model\MicroService.Model.csproj" />
     <ProjectReference Include="..\MicroService.Service\MicroService.Service.csproj" />
