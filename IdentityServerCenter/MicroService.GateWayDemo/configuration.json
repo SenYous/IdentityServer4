@@ -1,0 +1,18 @@
+//*************************单地址*************************
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5726 //服务端口
+        }
+      ],
+      "UpstreamPathTemplate": "/T5726/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+
+    }
+  ]
+}

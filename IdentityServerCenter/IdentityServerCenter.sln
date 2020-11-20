@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.Interface", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroService.ClientWebDemo", "MicroService.ClientWebDemo\MicroService.ClientWebDemo.csproj", "{AEF0D25A-0F82-4236-B389-1ED1E08DDF0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroService.GateWayDemo", "MicroService.GateWayDemo\MicroService.GateWayDemo.csproj", "{415D504F-AB78-4BCE-BF1F-5822825A5843}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{AEF0D25A-0F82-4236-B389-1ED1E08DDF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEF0D25A-0F82-4236-B389-1ED1E08DDF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEF0D25A-0F82-4236-B389-1ED1E08DDF0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415D504F-AB78-4BCE-BF1F-5822825A5843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415D504F-AB78-4BCE-BF1F-5822825A5843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415D504F-AB78-4BCE-BF1F-5822825A5843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415D504F-AB78-4BCE-BF1F-5822825A5843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{E3DF70DD-2010-49BB-BE9A-18E330460AA5} = {D36F0187-6510-4A14-AB81-C6EF17AA581E}
 		{6C624983-9478-4037-9399-133BBDE9554C} = {D36F0187-6510-4A14-AB81-C6EF17AA581E}
 		{AEF0D25A-0F82-4236-B389-1ED1E08DDF0C} = {D36F0187-6510-4A14-AB81-C6EF17AA581E}
+		{415D504F-AB78-4BCE-BF1F-5822825A5843} = {D36F0187-6510-4A14-AB81-C6EF17AA581E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {529DF7F5-1532-4B11-80C3-495290E98B5C}
