@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MicroService.ClientDemo.Controllers
@@ -38,7 +39,10 @@ namespace MicroService.ClientDemo.Controllers
         [Route("Get")]
         public User Get(int id)
         {
-            return this._iUserService.FindUser(id);
+            Console.WriteLine($"This is UsersController {this._iConfiguration["port"]}|Invoke GetId");
+            var model = this._iUserService.FindUser(id);
+            model.Role = $"{this._iConfiguration["ip"]}{this._iConfiguration["port"]}";
+            return model;
         }
 
 
@@ -46,7 +50,7 @@ namespace MicroService.ClientDemo.Controllers
         [Route("All")]
         public IEnumerable<User> Get()
         {
-            Console.WriteLine($"This is UsersController {this._iConfiguration["port"]}|Invoke");
+            Console.WriteLine($"This is UsersController {this._iConfiguration["port"]}|Invoke Get");
             return this._iUserService.UserAll().Select(u => new Model.User()
             {
                 Id = u.Id,
@@ -57,6 +61,31 @@ namespace MicroService.ClientDemo.Controllers
                 LoginTime = u.LoginTime,
                 Password = u.Password
             });
+        }
+
+        [HttpGet]
+        [Route("Timeout")]
+        public IEnumerable<User> Timeout()
+        {
+            Thread.Sleep(5000);
+            Console.WriteLine($"This is UsersController {this._iConfiguration["port"]}|Invoke Timeout");
+            return this._iUserService.UserAll().Select(u => new Model.User()
+            {
+                Id = u.Id,
+                Account = u.Account,
+                Name = u.Name,
+                Role = $"{this._iConfiguration["ip"]}{this._iConfiguration["port"]}",
+                Email = u.Email,
+                LoginTime = u.LoginTime,
+                Password = u.Password
+            });
+        }
+
+        [HttpGet]
+        [Route("Exception")]
+        public void Exception()
+        {
+            Console.WriteLine($"This is UsersController {this._iConfiguration["port"]}|Invoke Exception");
         }
     }
 }

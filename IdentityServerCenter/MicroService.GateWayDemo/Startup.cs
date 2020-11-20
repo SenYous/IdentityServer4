@@ -8,10 +8,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
+using Ocelot.Cache.CacheManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ocelot.Cache;
+using Ocelot.Provider.Polly;
 
 namespace MicroService.GateWayDemo
 {
@@ -27,7 +31,20 @@ namespace MicroService.GateWayDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot();
+            services
+                .AddOcelot()
+                .AddConsul()
+                .AddCacheManager(x =>
+                {
+                    x.WithDictionaryHandle();//默认字典存储
+                })
+                .AddPolly();
+            //.AddSingletonDefinedAggregator<UserAggregator>() //自定义聚合器
+            //.AddPolly();//如何处理
+
+            services.AddSingleton<IOcelotCache<CachedResponse>, CustomCache>();
+            //这里的IOcelotCache<CachedResponse>是默认缓存的约束--准备替换成自定义的
+
             //services.AddControllers();
         }
 
@@ -35,12 +52,12 @@ namespace MicroService.GateWayDemo
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            app.UseOcelot();//整个进程的管道换成Ocelot
-
             //if (env.IsDevelopment())
             //{
             //    app.UseDeveloperExceptionPage();
             //}
+
+            app.UseOcelot().Wait();//整个进程的管道换成Ocelot
 
             //app.UseHttpsRedirection();
 

@@ -1,18 +1,228 @@
-//*************************单地址*************************
+////*************************单地址*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/T5726/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+
+//    }
+//  ]
+//}
+
+////*************************单地址全匹配*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+
+//    }
+//  ]
+//}
+
+////*************************多地址*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        } //可以多个,自行负载均衡
+//      ],
+//      "UpstreamPathTemplate": "/T5726/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+//    },
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5727 //服务端口
+//        } //可以多个,自行负载均衡
+//      ],
+//      "UpstreamPathTemplate": "/T5727/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+//    },
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5728 //服务端口
+//        } //可以多个,自行负载均衡
+//      ],
+//      "UpstreamPathTemplate": "/T5728/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ]
+//    }
+//  ]
+//}
+
+//MVC的路由规则是先到先得
+//
+////*************************路由冲突+带权匹配*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "Priority": 0 //默认是0 加个1
+//    },
+//     {
+//      "DownstreamPathTemplate": "/api/users/get?id={id}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5727 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/api/users/get?id={id}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "Priority": 1 //默认是0 加个1
+//    },
+//     {
+//      "DownstreamPathTemplate": "/api/users/{url}?id={id}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5728 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/api/users/{url}/{id}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "Priority": 2 //默认是0 加个1
+//    }
+//  ]
+//}
+
+////*************************单地址多实例负载均衡*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        },
+//        {
+//          "Host": "localhost",
+//          "Port": 5727 //服务端口
+//        },
+//         {
+//          "Host": "localhost",
+//          "Port": 5728 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/T/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "LoadBalancerOptions": {
+//        "Type": "RoundRobin"//轮询  //"LeastConnection"//最少连接数的服务器  "NoLoadBalance"//不负载均衡  //"CookieStickySessions"//会话粘滞
+//      }
+//    }
+//  ]
+//}
+
+
+////*************************单地址多实例负载均衡Consul*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "UpstreamPathTemplate": "/T/{url}", //网关地址--url变量
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "UseServiceDiscovery": true,
+//      "ServiceName": "MicroService", //consul服务名称
+//      "LoadBalancerOptions": {
+//        "Type": "RoundRobin" //轮询  //"LeastConnection"//最少连接数的服务器  "NoLoadBalance"//不负载均衡  //"CookieStickySessions"//会话粘滞
+//      },
+//      "FileCacheOptions": {
+//        "TtlSeconds": 15,
+//        "Region": "UserCache"//可以调用API清理
+//      }
+//    }
+//  ],
+//  "GlobalConfiguration": {
+//    "BaseUrl": "http://127.0.0.1:6299", //网关对外地址
+//    "servicediscoveryprovider": {
+//      "host": "localhost",
+//      "port": 8500,
+//      "type": "consul" //由consul提供服务发现，每次请求去consul
+//    }
+//    //"ServiceDiscoveryProvider": {
+//    //  "Host": "localhost",
+//    //  "Port": 8500,
+//    //  "Type": "PollConsul", //由Consul提供服务发现
+//    //  "PollingInterval": 1000 //轮询consul,频率毫秒--down掉是不知道的
+//    //  //"Token":"footoken"//需要ACL的话
+//    //}
+//  }
+//}
+
+////*************************超时+限流+熔断+降级+Consul*************************
 {
-  "ReRoutes": [
+  "Routes": [
     {
       "DownstreamPathTemplate": "/api/{url}", //服务地址--URL变量
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5726 //服务端口
-        }
-      ],
-      "UpstreamPathTemplate": "/T5726/{url}", //网关地址--url变量  // 冲突的还可以加权重Priority
-      "UpstreamHttpMethod": [ "Get", "Post" ]
-
+      "UpstreamPathTemplate": "/T/{url}", //网关地址--url变量
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UseServiceDiscovery": true,
+      "ServiceName": "MicroService", //consul服务名称
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin" //轮询  //"LeastConnection"//最少连接数的服务器  "NoLoadBalance"//不负载均衡  //"CookieStickySessions"//会话粘滞
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 15,
+        "Region": "UserCache"//可以调用API清理
+      }
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://127.0.0.1:6299", //网关对外地址
+    "servicediscoveryprovider": {
+      "host": "localhost",
+      "port": 8500,
+      "type": "consul" //由consul提供服务发现，每次请求去consul
+    }
+    //"ServiceDiscoveryProvider": {
+    //  "Host": "localhost",
+    //  "Port": 8500,
+    //  "Type": "PollConsul", //由Consul提供服务发现
+    //  "PollingInterval": 1000 //轮询consul,频率毫秒--down掉是不知道的
+    //  //"Token":"footoken"//需要ACL的话
+    //}
+  }
 }

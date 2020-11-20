@@ -38,65 +38,69 @@ namespace MicroService.ClientWebDemo.Controllers
             #endregion
 
             #region consul
-            url = "http://MicroService/api/users/all";//客户端调用服务--Consul就像个DNS
+            //url = "http://MicroService/api/users/all";//客户端调用服务--Consul就像个DNS
 
-            ConsulClient client = new ConsulClient(c =>
-            {
-                c.Address = new Uri("http://localhost:8500/");
-                c.Datacenter = "dcl";
-            });
-            var response = client.Agent.Services().Result.Response;
-            //foreach (var item in response)
+            //ConsulClient client = new ConsulClient(c =>
             //{
-            //    Console.WriteLine("********************");
-            //    Console.WriteLine(item.Key);
-            //    var service = item.Value;
-            //    Console.WriteLine($"{service.Address}--{service.Port}--{service.Service}");
-            //    Console.WriteLine("********************");
+            //    c.Address = new Uri("http://localhost:8500/");
+            //    c.Datacenter = "dcl";
+            //});
+            //var response = client.Agent.Services().Result.Response;
+            ////foreach (var item in response)
+            ////{
+            ////    Console.WriteLine("********************");
+            ////    Console.WriteLine(item.Key);
+            ////    var service = item.Value;
+            ////    Console.WriteLine($"{service.Address}--{service.Port}--{service.Service}");
+            ////    Console.WriteLine("********************");
+            ////}
+
+
+            //Uri uri = new Uri(url);
+            //string groupName = uri.Host;
+            //AgentService agentService = null;
+            //var serviceDictionary = response.Where(s => s.Value.Service.Equals(groupName, StringComparison.OrdinalIgnoreCase)).ToArray();//找到的全部服务
+
+            //agentService = serviceDictionary[0].Value;
+            ////负载均衡策略
+            //{
+            //    //轮询策略
+            //    //agentService = serviceDictionary[iIndex++].Value;
+            //    //if (iIndex >= serviceDictionary.Length)
+            //    //    iIndex = 0;
+            //}
+            //{
+            //    //平均策略--随机获取索引--相对就平均
+            //    //if (iIndex >= int.MaxValue - 1)
+            //    //    iIndex = 0;
+            //    //agentService = serviceDictionary[new Random(iIndex++).Next(0, serviceDictionary.Length)].Value;
+            //}
+
+            //{
+            //    //权重策略--给不同的实例分配不同的压力--注册时提供权重
+            //    List<KeyValuePair<string, AgentService>> pairsList = new List<KeyValuePair<string, AgentService>>();
+            //    foreach (var pair in serviceDictionary)
+            //    {
+            //        int count = int.Parse(pair.Value.Tags?[0]);
+            //        for (int i = 0; i < count; i++)
+            //        {
+            //            pairsList.Add(pair);
+            //        }
+            //    }
+            //    agentService = pairsList.ToArray()[new Random(iIndex++).Next(0, pairsList.Count())].Value;
+
             //}
 
 
-            Uri uri = new Uri(url);
-            string groupName = uri.Host;
-            AgentService agentService = null;
-            var serviceDictionary = response.Where(s => s.Value.Service.Equals(groupName, StringComparison.OrdinalIgnoreCase)).ToArray();//找到的全部服务
-
-            agentService = serviceDictionary[0].Value;
-            //负载均衡策略
-            {
-                //轮询策略
-                //agentService = serviceDictionary[iIndex++].Value;
-                //if (iIndex >= serviceDictionary.Length)
-                //    iIndex = 0;
-            }
-            {
-                //平均策略--随机获取索引--相对就平均
-                //if (iIndex >= int.MaxValue - 1)
-                //    iIndex = 0;
-                //agentService = serviceDictionary[new Random(iIndex++).Next(0, serviceDictionary.Length)].Value;
-            }
-
-            {
-                //权重策略--给不同的实例分配不同的压力--注册时提供权重
-                List<KeyValuePair<string, AgentService>> pairsList = new List<KeyValuePair<string, AgentService>>();
-                foreach (var pair in serviceDictionary)
-                {
-                    int count = int.Parse(pair.Value.Tags?[0]);
-                    for (int i = 0; i < count; i++)
-                    {
-                        pairsList.Add(pair);
-                    }
-                }
-                agentService = pairsList.ToArray()[new Random(iIndex++).Next(0, pairsList.Count())].Value;
-
-            }
-
-
-            url = $"{uri.Scheme}://{agentService.Address}:{agentService.Port}{uri.PathAndQuery}";
+            //url = $"{uri.Scheme}://{agentService.Address}:{agentService.Port}{uri.PathAndQuery}";
 
 
             #endregion
 
+            #region Ocelot
+            url = "http://localhost:6299/T/users/all";
+
+            #endregion
             string content = InvokeApi(url);
 
             base.ViewBag.Users = JsonConvert.DeserializeObject<IEnumerable<User>>(content);
