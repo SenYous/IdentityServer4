@@ -1,8 +1,0 @@
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\bin\Debug\netcoreapp3.1\MicroService.Model.deps.json
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\bin\Debug\netcoreapp3.1\MicroService.Model.dll
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\bin\Debug\netcoreapp3.1\MicroService.Model.pdb
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\obj\Debug\netcoreapp3.1\MicroService.Model.AssemblyInfoInputs.cache
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\obj\Debug\netcoreapp3.1\MicroService.Model.AssemblyInfo.cs
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\obj\Debug\netcoreapp3.1\MicroService.Model.csproj.CoreCompileInputs.cache
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\obj\Debug\netcoreapp3.1\MicroService.Model.dll
-F:\CK_Project_2019\IdentityServerSample\IdentityServerCenter\MicroService.Model\obj\Debug\netcoreapp3.1\MicroService.Model.pdb
