@@ -59,6 +59,16 @@ namespace MicroService.GateWayDemo
 
             app.UseOcelot().Wait();//整个进程的管道换成Ocelot
 
+            //Ocelot拓展
+            var configuration = new OcelotPipelineConfiguration
+            {
+                PreQueryStringBuilderMiddleware = async (context, next) =>
+                {
+                    await Task.Run(() => Console.WriteLine($"This is custom middleware,PreQueryStringBuilderMiddleware {context.Request.Path}"));
+                    await next.Invoke();
+                }
+            };
+
             //app.UseHttpsRedirection();
 
             //app.UseRouting();
