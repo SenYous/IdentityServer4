@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\IdentityServerCenter.csproj": {}
+    "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\Microservice.ServoceInstanceAuthen\\Microservice.ServoceInstanceAuthen.csproj": {}
   },
   "projects": {
-    "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\IdentityServerCenter.csproj": {
+    "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\Microservice.ServoceInstanceAuthen\\Microservice.ServoceInstanceAuthen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\IdentityServerCenter.csproj",
-        "projectName": "IdentityServerCenter",
-        "projectPath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\IdentityServerCenter.csproj",
+        "projectUniqueName": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\Microservice.ServoceInstanceAuthen\\Microservice.ServoceInstanceAuthen.csproj",
+        "projectName": "Microservice.ServoceInstanceAuthen",
+        "projectPath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\Microservice.ServoceInstanceAuthen\\Microservice.ServoceInstanceAuthen.csproj",
         "packagesPath": "C:\\NuGetPackages",
-        "outputPath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\IdentityServerCenter\\obj\\",
+        "outputPath": "F:\\CK_Project_2019\\IdentityServerSample\\IdentityServerCenter\\Microservice.ServoceInstanceAuthen\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -24,7 +24,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "http://packages.nuget.org": {},
           "http://www.nuget.org/api/v2/": {},
           "https://www.nuget.org/api/v2/": {}
         },
@@ -44,13 +43,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "IdentityServer4": {
+            "IdentityServer4.AccessTokenValidation": {
               "target": "Package",
-              "version": "[4.1.1, )"
-            },
-            "Microsoft.OpenApi": {
-              "target": "Package",
-              "version": "[1.2.3, )"
+              "version": "[3.0.1, )"
             }
           },
           "imports": [
