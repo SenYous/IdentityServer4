@@ -236,53 +236,89 @@
 //}
 
 ////*************************请求聚合aggregator*************************
+//{
+//  "Routes": [
+//    {
+//      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5726 //服务端口
+//        } //可以多个，自行负载均衡
+//      ],
+//      "UpstreamPathTemplate": "/T5726/users/all", //网关地址--url变量
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "key": "T5726"
+//    },
+//    {
+//      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5727 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/T5727/users/all", //网关地址--url变量
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "key": "T5727"
+//    },
+//    {
+//      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
+//      "DownstreamScheme": "http",
+//      "DownstreamHostAndPorts": [
+//        {
+//          "Host": "localhost",
+//          "Port": 5728 //服务端口
+//        }
+//      ],
+//      "UpstreamPathTemplate": "/T5728/users/all", //网关地址--url变量
+//      "UpstreamHttpMethod": [ "Get", "Post" ],
+//      "key": "T5728"
+//    }
+//  ],
+//  "Aggregates": [
+//    {
+//      "RouteKeys": [ "T5726", "T5727", "T5728" ],
+//      "UpstreamPathTemplate": "/UserAggregator"
+//      //"Aggregator":"UserAggregator"//自定义聚合器
+//    }
+//  ]
+//}
+
+////*************************单地址多实例负载均衡Consul*************************
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5726 //服务端口
-        } //可以多个，自行负载均衡
-      ],
-      "UpstreamPathTemplate": "/T5726/users/all", //网关地址--url变量
-      "UpstreamHttpMethod": [ "Get", "Post" ],
-      "key": "T5726"
-    },
-    {
-      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5727 //服务端口
-        }
-      ],
-      "UpstreamPathTemplate": "/T5727/users/all", //网关地址--url变量
-      "UpstreamHttpMethod": [ "Get", "Post" ],
-      "key": "T5727"
-    },
-    {
-      "DownstreamPathTemplate": "/api/users/all", //服务地址--URL变量
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5728 //服务端口
-        }
-      ],
-      "UpstreamPathTemplate": "/T5728/users/all", //网关地址--url变量
-      "UpstreamHttpMethod": [ "Get", "Post" ],
-      "key": "T5728"
+      "downstreampathtemplate": "/api/{url}", //服务地址--url变量
+      "downstreamscheme": "http",
+      "upstreampathtemplate": "/t/{url}", //网关地址--url变量
+      "upstreamhttpmethod": [ "get", "post" ],
+      "useservicediscovery": true,
+      "servicename": "microservice", //consul服务名称
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin" //轮询  //"LeastConnection"//最少连接数的服务器  "NoLoadBalance"//不负载均衡  //"CookieStickySessions"//会话粘滞
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "UserGatewayKey",
+        "AllowedScopes": []
+      }
     }
   ],
-  "Aggregates": [
-    {
-      "RouteKeys": [ "T5726", "T5727", "T5728" ],
-      "UpstreamPathTemplate": "/UserAggregator"
-      //"Aggregator":"UserAggregator"//自定义聚合器
+  "globalconfiguration": {
+    "baseurl": "http://127.0.0.1:6299", //网关对外地址
+    "servicediscoveryprovider": {
+      "host": "localhost",
+      "port": 8500,
+      "type": "consul" //由consul提供服务发现，每次请求去consul
     }
-  ]
+    //"servicediscoveryprovider": {
+    //  "host": "localhost",
+    //  "port": 8500,
+    //  "type": "pollconsul", //由consul提供服务发现
+    //  "pollinginterval": 1000 //轮询consul,频率毫秒--down掉是不知道的
+    //  //"token":"footoken"//需要acl的话
+    //}
+  }
 }

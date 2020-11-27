@@ -31,6 +31,18 @@ namespace MicroService.GateWayDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region ids4
+            var authenticationProviderKey = "UserGatewayKey";
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(authenticationProviderKey, options =>
+                {
+                    options.Authority = "http://localhost:7200";
+                    options.ApiName = "api";
+                    options.RequireHttpsMetadata = false;
+                    options.SupportedTokens = IdentityServer4.AccessTokenValidation.SupportedTokens.Both;
+                });
+            #endregion
+
             services
                 .AddOcelot()
                 .AddConsul()
